@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAGGIO Sartoria Italiana / Tailored For You</title>
+<meta name="description" content="BAGGIO. Sartorial menswear, tailored for you. Beirut, Malla main street. Delivery all over Lebanon.">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand">
+      <img class="logo-img" src="logo.jpg" alt="Baggio crest">
+      BAGGIO
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="#sartoria">Sartoria</a>
+      <a class="nav-link" href="#shop">Repertorio</a>
+      <a class="nav-link" href="#visita">Visita</a>
+      <button class="cart-toggle" id="cartToggle" aria-label="Open cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ CART DRAWER (IDs must match main.js) ============ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Il Vostro Ordine</h3>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <p class="cart-empty" id="cartEmpty">Your order is empty.</p>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <button class="btn btn-primary cart-send" id="cartSend" style="width:100%;padding:16px;font-size:.75rem;display:flex;align-items:center;justify-content:center;gap:10px;">
+      Proceed to Checkout →
+    </button>
+  </div>
+</aside>
+
+<main id="top">
+
+  <!-- ============ HERO — crest plate + Bodoni display ============ -->
+  <section class="hero-b">
+    <div class="hero-spot" aria-hidden="true"></div>
+
+    <div class="wrap hero-b-grid">
+
+      <!-- left: crest plate -->
+      <div class="crest-plate reveal">
+        <span class="crest-corner c-tl" aria-hidden="true"></span>
+        <span class="crest-corner c-tr" aria-hidden="true"></span>
+        <span class="crest-corner c-bl" aria-hidden="true"></span>
+        <span class="crest-corner c-br" aria-hidden="true"></span>
+        <img src="logo.jpg" alt="Baggio shield mark">
+        <span class="crest-caption">Est. Beirut — MMXXIV</span>
+      </div>
+
+      <!-- right: copy -->
+      <div class="hero-b-copy">
+        <span class="hero-tag"><span class="shield"></span> Sartoria Italiana &nbsp;·&nbsp; Beirut</span>
+        <h1>
+          Baggio.
+          <em>Tailored for you.</em>
+        </h1>
+        <p class="lede">A tightly kept house of menswear — knit polos, linen shirts, tees with quiet cuts. Chosen with taste, delivered with care, worn without effort.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#shop">Il Repertorio <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#visita">Visita La Bottega</a>
+        </div>
+
+        <div class="hero-address">
+          <div>
+            <span class="lbl">Bottega</span>
+            <span class="val">Malla, Beirut</span>
+          </div>
+          <div>
+            <span class="lbl">Consegna</span>
+            <span class="val">All over Lebanon</span>
+          </div>
+          <div>
+            <span class="lbl">Servizio</span>
+            <span class="val">78 965 328</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ TICKER — Italian phrases scrolling ============ -->
+  <section class="ticker-b" aria-label="House phrases">
+    <div class="ticker-track">
+      <span>Sartoria Italiana</span><span class="sep" aria-hidden="true"></span>
+      <span>Tailored For You</span><span class="sep" aria-hidden="true"></span>
+      <span>Cash on Delivery</span><span class="sep" aria-hidden="true"></span>
+      <span>Consegna in Tutto il Libano</span><span class="sep" aria-hidden="true"></span>
+      <span>Buon Gusto</span><span class="sep" aria-hidden="true"></span>
+      <!-- duplicated for seamless loop -->
+      <span>Sartoria Italiana</span><span class="sep" aria-hidden="true"></span>
+      <span>Tailored For You</span><span class="sep" aria-hidden="true"></span>
+      <span>Cash on Delivery</span><span class="sep" aria-hidden="true"></span>
+      <span>Consegna in Tutto il Libano</span><span class="sep" aria-hidden="true"></span>
+      <span>Buon Gusto</span><span class="sep" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <!-- ============ SARTORIA — manifesto ============ -->
+  <section class="sartoria" id="sartoria">
+    <div class="wrap">
+      <div class="sartoria-grid">
+
+        <aside class="sartoria-side reveal">
+          <span class="eyebrow"><span class="shield"></span> La Casa</span>
+          <p class="italic">Il buon gusto<br>non fa rumore.</p>
+        </aside>
+
+        <div class="sartoria-body reveal">
+          <h2>Menswear <em>held together</em> by a quiet standard.</h2>
+          <p>Baggio was built on a single conviction — that a wardrobe made of fewer, better pieces will always outdress one made of many. The polos are knitted with weight. The linens are cut for how a man actually stands. Every colour, every cuff, every hem is chosen because it earns its place, not because it fills the rack.</p>
+          <p>Come to the bottega on Malla street, or order to your door anywhere in Lebanon. Either way, the standard travels with the parcel.</p>
+          <div class="signature">
+            <span class="shield"></span>
+            La Casa Baggio &nbsp;·&nbsp; Beirut
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOP — Il Repertorio (IDs must match main.js) ============ -->
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="shop-head reveal">
+        <span class="eyebrow"><span class="shield"></span> The Collection</span>
+        <span class="italic">Il Repertorio</span>
+        <h2>Pick your piece.</h2>
+        <p class="head-sub">Select size &amp; colour, add to cart, send the order on WhatsApp.</p>
+        <div class="gold-rule"></div>
+      </div>
+
+      <div class="shop-toolbar reveal">
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search polos, shirts, knitwear...">
+        </div>
+        <div class="filter-pills" id="filterPills"></div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="shop-empty" id="shopEmpty" style="display:none;">Nothing matches your search. Try another word or clear the filters.</p>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIANZE — reviews ============
+       NOTE FOR CLIENT: sample placeholder reviews. Swap for real feedback before launch. -->
+  <section class="testimonianze">
+    <div class="wrap">
+      <div class="test-head reveal">
+        <span class="eyebrow"><span class="shield"></span> The Regulars</span>
+        <span class="italic">Testimonianze</span>
+        <h2>Received with pride.</h2>
+        <div class="gold-rule"></div>
+      </div>
+
+      <div class="test-list">
+
+        <figure class="test-item reveal">
+          <span class="test-numeral">I.</span>
+          <div>
+            <blockquote>The knit polo is heavier than I expected in the best way — sits properly across the shoulders. Worn it to a wedding and to the office in the same week.</blockquote>
+            <figcaption><span class="stars">★★★★★</span> Karim H · Achrafieh</figcaption>
+          </div>
+        </figure>
+
+        <figure class="test-item reveal">
+          <span class="test-numeral">II.</span>
+          <div>
+            <blockquote>Ma 3endon shi 3ade — el quality byebayen mn awal marra teltbes el shirt. W el delivery ken sari3.</blockquote>
+            <figcaption><span class="stars">★★★★★</span> Fadi S · Jounieh</figcaption>
+          </div>
+        </figure>
+
+        <figure class="test-item reveal">
+          <span class="test-numeral">III.</span>
+          <div>
+            <blockquote lang="ar">ذوق راقٍ وقماش ممتاز. زرت المحل بالمعلا وكان التعامل بغاية اللطف.</blockquote>
+            <figcaption><span class="stars">★★★★★</span> Hassan M · Tripoli</figcaption>
+          </div>
+        </figure>
+
+        <figure class="test-item reveal">
+          <span class="test-numeral">IV.</span>
+          <div>
+            <blockquote>Ordered the linen shirt in Panna. Fits exactly as they described, exchanged the size within a day when I asked. Old-school service.</blockquote>
+            <figcaption><span class="stars">★★★★★</span> Georges N · Dbayeh</figcaption>
+          </div>
+        </figure>
+
+        <figure class="test-item reveal">
+          <span class="test-numeral">V.</span>
+          <div>
+            <blockquote>Sara7a el waffle polo saret mn favorites 3ende. El fit slim bala ma ykoun d2i2, w el color Cammello ktir mnih.</blockquote>
+            <figcaption><span class="stars">★★★★★</span> Rami D · Baabda</figcaption>
+          </div>
+        </figure>
+
+        <figure class="test-item reveal">
+          <span class="test-numeral">VI.</span>
+          <div>
+            <blockquote lang="ar">القميص السلك بلند خفيف وأنيق للصيف. أنصح فيهم لكل من بيدور على شغل نظيف.</blockquote>
+            <figcaption><span class="stars">★★★★★</span> Ali T · Saida</figcaption>
+          </div>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COME SI ORDINA — process ============ -->
+  <section class="come-si">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow"><span class="shield"></span> How It Works</span>
+        <span class="italic">Come Si Ordina</span>
+        <h2>Three steps.</h2>
+        <div class="gold-rule"></div>
+      </div>
+
+      <div class="come-steps">
+        <div class="come-step reveal">
+          <span class="come-num">I.</span>
+          <h3>Choose <em>Scegli</em></h3>
+          <p>Browse the collection, choose your size and colour, add to cart.</p>
+        </div>
+        <div class="come-step reveal">
+          <span class="come-num">II.</span>
+          <h3>Send <em>Invia</em></h3>
+          <p>Your full order lands in our WhatsApp, pre-written. Confirm and we take it from there.</p>
+        </div>
+        <div class="come-step reveal">
+          <span class="come-num">III.</span>
+          <h3>Wear <em>Indossa</em></h3>
+          <p>Delivered to your door across Lebanon. Pay in cash when you're happy with the fit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISITA — physical bottega address ============ -->
+  <section class="visit" id="visita">
+    <div class="wrap reveal">
+      <span class="eyebrow"><span class="shield"></span> The Bottega</span>
+      <span class="italic">Visita La Bottega</span>
+      <h2>Malla, Beirut.</h2>
+      <div class="gold-rule"></div>
+      <div class="visit-info">
+        <div>
+          <span class="lbl">Indirizzo</span>
+          <span class="val">Malla main street</span>
+        </div>
+        <div>
+          <span class="lbl">Contatto</span>
+          <span class="val">78 965 328</span>
+        </div>
+        <div>
+          <span class="lbl">Consegna</span>
+          <span class="val">Tutto il Libano</span>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/96178965328" target="_blank" rel="noopener">Message on WhatsApp <span class="arr">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <img class="logo-img" src="logo.jpg" alt="Baggio crest">
+      BAGGIO
+    </a>
+    <div class="foot-mid">Sartoria Italiana · Beirut</div>
+    <div class="links">
+      <a href="https://wa.me/96178965328" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/baggio.lb" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p class="fine" id="fine"></p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
