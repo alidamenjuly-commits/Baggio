@@ -1026,6 +1026,15 @@ footer .fine{
   .product-grid{ grid-template-columns:1fr 1fr; }
 }
 @media (max-width:600px){
+  .brand{
+    font-size:1rem;
+    gap:10px;
+  }
+  .brand .logo-img{ width:30px; height:30px; }
+  .cart-toggle{
+    padding:8px 10px;
+   
+  }
   .nav-right{ gap:14px; }
   .nav-link{ display:none; }
   .product-grid{ grid-template-columns:1fr 1fr; gap:12px; }
