@@ -244,6 +244,7 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; }
 .crest-plate{
   position:relative;
   aspect-ratio:1/1.15;
+  width:100%;
   max-width:420px;
   padding:32px;
   border:1px solid var(--gold-dim);
@@ -1026,6 +1027,9 @@ footer .fine{
   .product-grid{ grid-template-columns:1fr 1fr; }
 }
 @media (max-width:600px){
+  .hero-b{ padding:100px 0 40px; }
+  .crest-plate{ max-width:280px;
+  margin: auto; }
   .brand{
     font-size:1rem;
     gap:10px;
@@ -1035,6 +1039,7 @@ footer .fine{
     padding:8px 10px;
    
   }
+  .wrap{ padding-inline:16px; }
   .nav-right{ gap:14px; }
   .nav-link{ display:none; }
   .product-grid{ grid-template-columns:1fr 1fr; gap:12px; }
