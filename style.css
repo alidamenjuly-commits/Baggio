@@ -1022,9 +1022,25 @@ footer .fine{
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════════════ */
-
 @media (max-width:900px){
-  .product-grid{ grid-template-columns:1fr 1fr; }
+  .hero-b-grid{ grid-template-columns:1fr; }
+  .crest-plate{
+    max-width:340px;
+    margin:0 auto 60px;   /* extra space below so caption isn't crowded */
+    aspect-ratio:auto;    /* let height be driven by content instead of forced ratio */
+    padding-bottom:56px;  /* room inside the plate for the caption */
+  }
+  .crest-plate img{
+    aspect-ratio:1/1;     /* keep the image square */
+    height:auto;
+  }
+  .crest-caption{
+    position:absolute;
+    bottom:20px; left:0; right:0;
+    transform:none;
+    text-align:center;
+    white-space:normal;    /* caption can wrap on very small screens */
+  }
 }
 @media (max-width:600px){
   .hero-b{ padding:100px 0 40px; }
